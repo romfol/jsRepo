@@ -1,6 +1,6 @@
-let path = require('path');
+const path = require('path');
 
-let conf = {
+const conf = {
     entry: './src/index.js',
     output: {
         path: path.resolve(__dirname, './dist'),
