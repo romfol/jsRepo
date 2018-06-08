@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import './css/style.css';
+import './scss/style.scss';
 
 class HelloMessage extends React.Component {
   render() {
