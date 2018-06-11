@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 const conf = {
-    entry: './src/index.js',
+    entry: './src/index.jsx',
     output: {
         path: path.resolve(__dirname, './dist'),
         filename: 'main.js',
@@ -26,16 +26,13 @@ const conf = {
                     use: ['css-loader', 'sass-loader'],
                     publicPath: '/dist'
                 })
-                //    'style-loader',
-                 //   'css-loader',
-                   // 'sass-loader'
                 
-            }//,
-            //{
-            //    test: /.jsx?$/,
-            //    loader: 'babel-loader',
-           //     exclude: /node_modules/
-           // }
+            },
+            {
+                test: /.jsx?$/,
+                loader: 'babel-loader',
+                exclude: /node_modules/
+            }
         ]
     },
     plugins: [
