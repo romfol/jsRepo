@@ -3,16 +3,10 @@ import ReactDOM from 'react-dom';
 
 import './scss/style.scss';
 
-class HelloMessage extends React.Component {
-  render() {
-    return (
-      <div>
-        Hello {this.props.name}
-      </div>
-    );
-  }
-}
+const jsx = 
+	<div className='container'>
+		<h1>React</h1>
+		<p>Библиотека для UI</p>	
+	</div>;	
 
-ReactDOM.render(
-  <HelloMessage name="Taylor" />,document.getElementById("app")
-);
+ReactDOM.render(jsx, document.getElementById('app'));
