@@ -3,11 +3,11 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 const conf = {
-    entry: './src/index.jsx',
+    entry: './src/index.js',
     output: {
-        path: path.resolve(__dirname, './dist'),
-        filename: 'main.js',
-        publicPath: 'dist/'
+        path: path.resolve(__dirname, './public'),
+        filename: 'bundle.js',
+        publicPath: 'public/'
     },
     devServer: {
         overlay: true
@@ -41,7 +41,7 @@ const conf = {
             inject: "body"
         }),
         new ExtractTextPlugin({
-            filename: 'style.css',
+            filename: 'styles.css',
             disable: false,
             allChunks: true
         })

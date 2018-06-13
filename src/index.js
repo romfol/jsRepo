@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import './scss/style.scss';
+import './components/example/styles.scss';
 
 const jsx = 
 	<div className='container'>
