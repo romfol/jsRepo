@@ -1,11 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Navigation from './routes/routes.jsx';
+import App from './app.jsx';
 
 
 import './containers/listOfLocations/styles.scss';
 
-
-
-
-ReactDOM.render(<Navigation/>, document.getElementById('app'));
+ReactDOM.render(<App/>, document.getElementById('app'));
