@@ -1,12 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Navigation from './routes/routes.jsx';
 
-import './components/example/styles.scss';
 
-const jsx = 
-	<div className='container'>
-		<h1>React</h1>
-		<p>Библиотека для UI</p>	
-	</div>;	
+import './containers/listOfLocations/styles.scss';
 
-ReactDOM.render(jsx, document.getElementById('app'));
+
+
+
+ReactDOM.render(<Navigation/>, document.getElementById('app'));
