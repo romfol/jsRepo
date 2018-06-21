@@ -9,7 +9,7 @@ export default class LocationRoutes extends Component {
             <Router>
                 <div>
                     <li><Link to="/go">Go</Link></li>
-                    <hr/>
+                    <p>Recent searches:</p>
                     <Route path="/go" component={ListOfLocations}/>
                 </div>
             </Router>

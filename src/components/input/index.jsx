@@ -1,11 +1,15 @@
-import React from 'react';
+import React, {Component} from 'react';
+//import { createStore } from 'redux'
 
-export default InputText = () => {
+export default class InputText extends Component {
+  render() {
     return (
-      <p>
-        Use the form below to ввввsearch for houses to buy. 
-        You can search by place-name, postcode, or click 'My location', 
-        to search in your current location!
-      </p> 
+      <form>
+      <label>
+        <input type="text" name="name" />
+      </label>
+      
+    </form>
     );
   }
+} 
