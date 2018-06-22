@@ -1,15 +1,9 @@
-import React, {Component} from 'react';
-//import { createStore } from 'redux'
+import React from 'react';
 
-export default class InputText extends Component {
-  render() {
-    return (
-      <form>
-      <label>
-        <input type="text" name="name" />
-      </label>
-      
-    </form>
-    );
-  }
-} 
+const InputText = () => (
+  <form>
+    <input type="text" name="name" />
+  </form>
+);
+
+export default InputText;

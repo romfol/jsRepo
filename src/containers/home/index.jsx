@@ -1,15 +1,12 @@
-import React, { Component } from 'react';
-import Text from '../../components/instructionalText/index.jsx';
-import InputText from '../../components/input/index.jsx';
+import React from 'react';
+import Text from '../../components/instructionalText/index';
+import InputText from '../../components/input/index';
 
-export default class Home extends Component {
-    render() {
-      return (
-      <div>
-       <Text/>
-       <InputText/>
-      </div> 
-      );
-    }
-  }
-    
+const Home = () => (
+  <div>
+    <Text />
+    <InputText />
+  </div>
+);
+
+export default Home;

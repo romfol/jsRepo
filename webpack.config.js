@@ -1,6 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const conf = {
     entry: './src/index.js',
@@ -12,6 +12,7 @@ const conf = {
     devServer: {
         overlay: true
     },
+    resolve: {extensions: ['.js','.jsx']},
     module: {
         rules: [
             {

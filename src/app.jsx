@@ -1,14 +1,12 @@
-import React, {Component} from 'react';
-import Navigation from './routes/routes.jsx';
-import LocationRoutes from './routes/listOfLocations.jsx'
+import React from 'react';
+import Navigation from './routes/routes';
+import LocationRoutes from './routes/listOfLocations';
 
-export default class App extends Component {
-    render() {
-      return (
-      <div>
-       <Navigation/>
-       <LocationRoutes/>
-      </div> 
-      );
-    }
-  }
+const App = () => (
+  <div>
+    <Navigation />
+    <LocationRoutes />
+  </div>
+);
+
+export default App;

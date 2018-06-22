@@ -1,12 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-export default class Favourite extends Component {
-    render() {
-      return (
-       <div>
-           fav
-       </div>
-      );
-    }
-  }
-    
+const Favourite = () => (
+  <div>
+    fav
+  </div>
+);
+
+export default Favourite;
