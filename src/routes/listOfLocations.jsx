@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
-import ListOfLocations from '../containers/listOfLocations/index.jsx';
+import ListOfLocations from '../containers/listOfLocations/index';
 
 const LocationRoutes = () => (
   <Router>

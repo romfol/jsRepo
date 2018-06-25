@@ -15,7 +15,7 @@ const Navigation = () => (
       </h1>
       <h1>
         <Link to="/faves">
-            Faves
+        Faves
         </Link>
       </h1>
       <hr />
@@ -24,6 +24,5 @@ const Navigation = () => (
     </div>
   </Router>
 );
-
 
 export default Navigation;
