@@ -1,15 +1,19 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import Navigation from './routes/routes';
-import LocationRoutes from './routes/listOfLocations';
+import { render } from 'react-dom';
+import { BrowserRouter } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import configureStore from './store/configureStore';
+import App from './routes/routes';
 
 import './containers/listOfLocations/styles.scss';
 
-const App = () => (
-  <div>
-    <Navigation />
-    <LocationRoutes />
-  </div>
-);
+const store = configureStore();
 
-ReactDOM.render(<App />, document.getElementById('app'));
+render(
+  <BrowserRouter>
+    <Provider store={store}>
+      <App />
+    </Provider>
+  </BrowserRouter>,
+  document.getElementById('app'),
+);

@@ -1,11 +1,11 @@
 import React from 'react';
 import Text from '../../components/instructionalText/index';
-import InputText from '../../components/input/index';
+import Search from '../../components/search/index';
 
 const Home = () => (
   <div>
     <Text />
-    <InputText />
+    <Search />
   </div>
 );
 

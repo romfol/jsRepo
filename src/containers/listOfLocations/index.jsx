@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 const API = 'https://api.nestoria.co.uk/api?country=uk&pretty=1&action=search_listings&encoding=json&listing_type=buy&page=1&place_name=';
-const city = 'London';
+const city = 'Liverpool';
 
-export default class Text extends Component {
+class Lists extends Component {
   constructor() {
     super();
 
@@ -37,6 +38,7 @@ export default class Text extends Component {
         <img src={searched.image} alt="properties" />
         <p>
           {searched.price}
+          {this.props.user}
         </p>
         <p>
           {searched.title}
@@ -45,3 +47,11 @@ export default class Text extends Component {
     ));
   }
 }
+
+function mapStateToProps(state) {
+  return {
+    user: state.user,
+  };
+}
+
+export default connect(mapStateToProps)(Lists);

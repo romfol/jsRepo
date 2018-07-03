@@ -1,12 +1,12 @@
 import React from 'react';
 
-class InputText extends React.Component {
+class Search extends React.Component {
   constructor(props) {
     super(props);
     this.state = { value: '' };
 
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+    // this.handleChange = this.handleChange.bind(this);
+    // this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleChange(event) {
@@ -31,4 +31,4 @@ class InputText extends React.Component {
   }
 }
 
-export default InputText;
+export default Search;
