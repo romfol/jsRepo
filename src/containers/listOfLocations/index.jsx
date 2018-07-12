@@ -1,57 +1,36 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-
-const API = 'https://api.nestoria.co.uk/api?country=uk&pretty=1&action=search_listings&encoding=json&listing_type=buy&page=1&place_name=';
-const city = 'Liverpool';
+import { bindActionCreators } from 'redux';
+import * as getApiActions from '../../actions/locationList';
 
 class Lists extends Component {
-  constructor() {
-    super();
-
-    this.state = {
-      searchResults: [],
-    };
-  }
-
-  componentDidMount() {
-    this.fetchData();
-  }
-
-  fetchData() {
-    fetch(API + city)
-      .then(response => response.json())
-      .then(parsedJSON => parsedJSON.response.listings.map(list => ({
-        price: `${list.price}`,
-        image: `${list.img_url}`,
-        title: `${list.title}`,
-      })))
-      .then(searchResults => this.setState({
-        searchResults,
-      }))
-      .catch(error => console.log('parsing failed', error));
+  constructor(props) {
+    super(props);
   }
 
   render() {
-    const { searchResults } = this.state;
-    return searchResults.map(searched => (
-      <div key={searched.title}>
-        <img src={searched.image} alt="properties" />
-        <p>
-          {searched.price}
-          {this.props.user}
-        </p>
-        <p>
-          {searched.title}
-        </p>
-      </div>
-    ));
+    console.log(this.props.getApi)
+    console.log(this.props.propertyList.data)
+    console.log(this.props.propertyList.list)
+    
+    return <div>{this.props.propertyList.list}</div>;
+    
   }
 }
 
 function mapStateToProps(state) {
   return {
-    user: state.user,
+    propertyList: state.propertyList,
+    someInFuture: state.someInFuture,
   };
 }
 
-export default connect(mapStateToProps)(Lists);
+function mapDispatchToProps(dispatch) {
+  return {
+    getApi: bindActionCreators(getApiActions, dispatch),
+  };
+}
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(Lists);
