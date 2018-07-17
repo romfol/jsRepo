@@ -11,6 +11,9 @@ const conf = {
   },
   devServer: {
     overlay: true,
+
+    historyApiFallback: true,
+    contentBase: './public',
   },
   resolve: { extensions: ['.js', '.jsx'] },
   module: {
