@@ -41,10 +41,9 @@ class Lists extends React.Component {
 }
 
 const mapDispatchToProps = {
-    getApi,
-    getLocations
-  
-}
+  getApi,
+  getLocations,
+};
 
 function mapStateToProps(state) {
   return {

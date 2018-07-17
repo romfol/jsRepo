@@ -6,8 +6,8 @@ const initialState = {
 
 export default function propertyList(state = initialState, action) {
   switch (action.type) {
-     case GET_API:
-       return { ...state, list: action.request };
+    case GET_API:
+      return { ...state, list: action.request };
     default:
       return state;
   }
