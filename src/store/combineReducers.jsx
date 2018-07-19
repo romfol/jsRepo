@@ -4,5 +4,4 @@ import someInFuture from '../reducers/someAnotherFuture';
 
 export default combineReducers({
   propertyList,
-  someInFuture,
 });

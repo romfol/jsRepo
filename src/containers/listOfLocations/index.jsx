@@ -1,40 +1,37 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
 import { getApi, getLocations } from '../../actions/locationList';
 
 class Lists extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   componentDidMount() {
     this.props.getApi();
   }
 
-  // getData() {
-  //   getApi()
-  //     .then(response => response.json())
-  //     .then(parsedJSON => parsedJSON.response.listings.map(list => ({
-  //       price: `${list.price}`,
-  //       image: `${list.img_url}`,
-  //       title: `${list.title}`,
-  //     })))
-  //     .then(searchResults => this.setState({
-  //       searchResults,
-  //     }))
-  //     .catch(error => console.log('parsing failed', error));
+  itemsList() {
+    return this.props.propertyList.list.map(sample => (
+      <div key={sample.title}>
+        <img src={sample.img_url} alt="properties" />
+        <span>
+          {sample.price_formatted}
+        </span>
+        <span>
+          {sample.title}
+        </span>
+      </div>
+    ));
 
-  //   console.log('ok');
-  // }
+    // data.forEach(elem => (
+    //   // console.log(elem.title),
+    //   <div key={elem.title}>
+    //     {elem.price}
+    //   </div>
+    // ));
+  }
 
   render() {
-   
-    // console.log(getApi.searchResults);
     return (
       <div>
-        11
-        
+        {this.props.propertyList.list.length > 0 && this.itemsList()}
       </div>
     );
   }
@@ -42,13 +39,11 @@ class Lists extends React.Component {
 
 const mapDispatchToProps = {
   getApi,
-  getLocations,
 };
 
 function mapStateToProps(state) {
   return {
     propertyList: state.propertyList,
-    someInFuture: state.someInFuture,
   };
 }
 
