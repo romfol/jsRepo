@@ -7,7 +7,7 @@ export const getApi = () => ({
   ),
 });
 
-export const getLocations = locations => ({
+export const findLocation = locations => ({
   type: GET_LOCATIONS,
   locations,
 });

@@ -1,4 +1,4 @@
-import { GET_API, GET_LOCATIONS } from '../constants/propertyList';
+import { GET_API, GET_LOCATION } from '../constants/propertyList';
 
 const initialState = {
   list: [],

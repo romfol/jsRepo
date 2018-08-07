@@ -4,7 +4,6 @@ import reduxLogger from 'redux-logger';
 import rootReducer from './combineReducers';
 import middleware from '../middlewares/middleware';
 
-/* eslint-disable no-underscore-dangle */
 export default function configureStore(initialState) {
   const store = createStore(
     rootReducer,
@@ -13,4 +12,3 @@ export default function configureStore(initialState) {
   );
   return store;
 }
-/* eslint-enable */

@@ -9,8 +9,9 @@ class Lists extends React.Component {
 
   itemsList() {
     return this.props.propertyList.list.map(sample => (
-      <div key={sample.title}>
+      <div key={sample.summary}>
         <img src={sample.img_url} alt="properties" />
+        <br />
         <span>
           {sample.price_formatted}
         </span>
@@ -19,13 +20,6 @@ class Lists extends React.Component {
         </span>
       </div>
     ));
-
-    // data.forEach(elem => (
-    //   // console.log(elem.title),
-    //   <div key={elem.title}>
-    //     {elem.price}
-    //   </div>
-    // ));
   }
 
   render() {

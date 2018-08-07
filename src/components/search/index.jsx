@@ -1,34 +1,39 @@
 import React from 'react';
+import findLocation from '../../actions/locationList';
+import { connect } from 'react-redux';
 
 class Search extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { value: '' };
+  state = { value: '' };
 
-    // this.handleChange = this.handleChange.bind(this);
-    // this.handleSubmit = this.handleSubmit.bind(this);
-  }
+  handleSubmit = e => {
+    e.preventDefault();
+    // this.props.findLocation(this.state.value);
+    console.log(this.state.value);
+  };
 
-  handleChange(event) {
-    this.setState({ value: event.target.value });
-  }
+  handleChange = e => {
+    this.setState({ value: e.target.value });
 
-  handleSubmit(event) {
-    alert(`A name was submitted: ${this.state.value}`);
-    event.preventDefault();
-  }
+    console.log(this.state.value);
+  };
 
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
-        <label>
-          Name:
-          <input type="text" value={this.state.value} onChange={this.handleChange} />
-        </label>
-        <input type="submit" value="Submit" />
+        <input type="text" value={this.state.value} onChange={this.handleChange} />
+        <br />
+        <input type="submit" value="Go" />
+        {/* <input type="submit" value="My location" /> */}
       </form>
     );
   }
 }
 
-export default Search;
+const mapDispatchToProps = {
+  findLocation,
+};
+
+export default connect(
+  null,
+  mapDispatchToProps,
+)(Search);
